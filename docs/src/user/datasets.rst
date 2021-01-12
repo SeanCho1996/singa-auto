@@ -74,7 +74,45 @@ An example of the upload ``.zip`` file structure:
                 + 0003.png
                 + ...
         + params.json
+		
+		
+DETECTION\_IMAGES
+-----------------
 
+-  Inside the uploaded ``.zip`` file, the training and validation sets
+   should be wrapped separately, and be named strictly as ``train`` and
+   ``val``.
+-  For ``train`` folder (the same for ``val`` folder), the images and
+   annotated json files should also be wrapped separately, and be named
+   strictly as ``image`` and ``annotation``.
+-  ``annotation`` folder should only contain only ``.json`` files and file name
+   should be the same as each mask's corresponding image. (eg. for an
+   image named ``0001.jpg``, its corresponding mask should be named as
+   ``0001.json``)
+
+An example of the upload ``.zip`` file structure:
+
+::
+
+    + dataset.zip
+        + train
+            + image
+                + 0001.jpg
+                + 0002.jpg
+                + ...
+            + annotation
+                + 0001.json
+                + 0002.json
+                + ..  
+        + val
+            + image
+                + 0003.jpg
+                + ...
+            + annotation
+                + 0003.json
+                + ...
+
+				
 IMAGE\_FILES
 ------------
 
