@@ -32,12 +32,11 @@ For each row,
 SEGMENTATION\_IMAGES
 --------------------
 
--  Inside the uploaded ``.zip`` file, the training and validation sets
-   should be wrapped separately, and be named strictly as ``train`` and
-   ``val``.
--  For ``train`` folder (the same for ``val`` folder), the images and
-   annotated masks should also be wrapped separately, and be named
-   strictly as ``image`` and ``mask``.
+-  Inside the uploaded ``.zip`` file, we recommand you to directly wrap
+   the source images and the masks in two seperate folders and be named
+   strictly ``image`` and ``mask``, our model will split the training
+   and validation sets itself.
+
 -  ``mask`` folder should contain only ``.png`` files and file name
    should be the same as each mask's corresponding image. (eg. for an
    image named ``0001.jpg``, its corresponding mask should be named as
@@ -52,7 +51,30 @@ SEGMENTATION\_IMAGES
            "num_classes": 21
        }
 
+-  Or you can split the training and validation sets before upload. The
+   training and validation sets should be wrapped separately, and be
+   named strictly as ``train`` and ``val``.
+-  For ``train`` folder (the same for ``val`` folder), the images and
+   annotated masks should still be wrapped separately, and be named
+   strictly as ``image`` and ``mask``. And the names should be the same
+   as mentioned above.
+
 An example of the upload ``.zip`` file structure:
+
+::
+
+    + dataset.zip
+        + image
+            + 0001.jpg
+            + 0002.jpg
+            + ...
+        + mask
+            + 0001.png
+            + 0002.png
+            + ..     
+        + params.json
+
+Another example of the upload ``.zip`` file structure:
 
 ::
 
@@ -74,8 +96,7 @@ An example of the upload ``.zip`` file structure:
                 + 0003.png
                 + ...
         + params.json
-		
-		
+
 DETECTION\_IMAGES
 -----------------
 
@@ -85,10 +106,10 @@ DETECTION\_IMAGES
 -  For ``train`` folder (the same for ``val`` folder), the images and
    annotated json files should also be wrapped separately, and be named
    strictly as ``image`` and ``annotation``.
--  ``annotation`` folder should only contain only ``.json`` files and file name
-   should be the same as each mask's corresponding image. (eg. for an
-   image named ``0001.jpg``, its corresponding mask should be named as
-   ``0001.json``)
+-  ``annotation`` folder should only contain only ``.json`` files and
+   file name should be the same as each mask's corresponding image. (eg.
+   for an image named ``0001.jpg``, its corresponding mask should be
+   named as ``0001.json``)
 
 An example of the upload ``.zip`` file structure:
 
@@ -112,7 +133,6 @@ An example of the upload ``.zip`` file structure:
                 + 0003.json
                 + ...
 
-				
 IMAGE\_FILES
 ------------
 
